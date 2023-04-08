@@ -1,5 +1,6 @@
 import React from "react";
 import { Toaster } from "react-hot-toast";
+import { PropTypes } from "prop-types";
 
 import { Layout } from "../components";
 import "@/styles/globals.css";
