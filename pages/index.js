@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import { client } from "../lib/client";
 import { Product, FooterBanner, HeroBanner } from "../components";
 
@@ -19,6 +19,11 @@ const Home = ({ products, bannerData }) => {
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </div>
   );
+};
+
+Home.propTypes = {
+  products: PropTypes.array.isRequired,
+  bannerData: PropTypes.array.isRequired,
 };
 
 export const getServerSideProps = async () => {

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Link from "next/link";
 
 import { urlFor } from "@/lib/client";
@@ -29,6 +30,21 @@ const FooterBanner = ({ footerBanner }) => {
       </div>
     </div>
   );
+};
+
+FooterBanner.propTypes = {
+  footerBanner: PropTypes.shape({
+    discount: PropTypes.string.isRequired,
+    largeText1: PropTypes.string.isRequired,
+    largeText2: PropTypes.string.isRequired,
+    saleTime: PropTypes.string.isRequired,
+    smallText: PropTypes.string.isRequired,
+    midText: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    product: PropTypes.string.isRequired,
+    buttonText: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
+  }).isRequired,
 };
 
 export default FooterBanner;

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { urlFor } from "@/lib/client";
+import PropTypes from "prop-types";
 
 const HeroBanner = ({ heroBanner }) => {
   return (
@@ -16,7 +17,7 @@ const HeroBanner = ({ heroBanner }) => {
         />
       </div>
       <div>
-        <Link href={`/product/ID/${heroBanner.product}`}>
+        <Link href={`/product/${heroBanner.product}`}>
           <button type="button">{heroBanner.buttonText}</button>
         </Link>
         <div className="desc">
@@ -26,6 +27,18 @@ const HeroBanner = ({ heroBanner }) => {
       </div>
     </div>
   );
+};
+
+HeroBanner.propTypes = {
+  heroBanner: PropTypes.shape({
+    smallText: PropTypes.string.isRequired,
+    midText: PropTypes.string.isRequired,
+    largeText1: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
+    product: PropTypes.string.isRequired,
+    buttonText: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default HeroBanner;

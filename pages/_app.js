@@ -1,12 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Toaster } from "react-hot-toast";
-import { PropTypes } from "prop-types";
 
 import { Layout } from "../components";
 import "@/styles/globals.css";
 import { StateContext } from "../context/StateContext";
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <StateContext>
       <Layout>
@@ -16,3 +16,10 @@ export default function App({ Component, pageProps }) {
     </StateContext>
   );
 }
+
+App.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  pageProps: PropTypes.object.isRequired,
+};
+
+export default App;

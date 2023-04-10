@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import {
   AiOutlineMinus,
   AiOutlinePlus,
@@ -117,6 +118,18 @@ export const getStaticPaths = async () => {
     paths,
     fallback: "blocking",
   };
+};
+
+ProductDetails.propTypes = {
+  product: PropTypes.shape({
+    // define the shape of the product object
+    image: PropTypes.array,
+    name: PropTypes.string,
+    detail: PropTypes.string,
+    price: PropTypes.number,
+    // add more properties if necessary
+  }).isRequired,
+  products: PropTypes.array.isRequired,
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
